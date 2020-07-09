@@ -28,105 +28,91 @@ class TestLogin:
         self.driver.implicitly_wait(20)
         # self.login_page.click_btncloseadv()
 
-    # # @pytest.mark.run(order=1)
-    # # @pytest.mark.skipif(True, reason="done")
-    # @allure.step(title="HY登录模块校验")
-    # @pytest.mark.parametrize("args", data_with_key("test_login"))
-    # def test_Hy_Login(self, args):
-    #     title = args["title"]
-    #     screen = args["screen"]
-    #     hover = args["hover"]
-    #     username = args["username"]
-    #     password = args["password"]
-    #     exist = args["exist"]
-    #
-    #     allure.attach("", "标题：" + title)
-    #     allure.attach("", "用例编号：_" + screen)
-    #     allure.attach("", "点击登录按钮")
-    #     self.login_page.click_sign()
-    #     allure.attach("", "输入：" + username)
-    #     self.login_page.input_username(username)
-    #     allure.attach("", "输入" + password)
-    #     self.login_page.input_password(password)
-    #     allure.attach("", "点击HY登陆页立即登录按钮")
-    #     self.login_page.click_login_btn()
-    #
-    #     if hover == "0":
-    #         pass
-    #         try:
-    #             allure.attach("", "校验页面元素是否包含：" + exist)
-    #             assert self.base_webaction.is_toast_exist(exist)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             # self.base_webaction.screenshot(screen)
-    #             self.driver.quit()
-    #
-    #         except Exception as msg:
-    #             self.base_webaction.screenshot(screen)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             print('测试Fail,异常原因:', msg)
-    #             self.driver.quit()
-    #             assert False
-    #
-    #     elif hover == "1":
-    #         self.login_page.move_to_element(self.login_page.after_login)
-    #         self.login_page.click_td1()
-    #         try:
-    #             allure.attach("", "校验页面元素是否包含：" + exist)
-    #             assert self.base_webaction.is_toast_exist(exist)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             # self.base_webaction.screenshot(screen)
-    #             self.driver.quit()
-    #
-    #         except Exception as msg:
-    #             self.base_webaction.screenshot(screen)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             print('测试Fail,异常原因:', msg)
-    #             self.driver.quit()
-    #             assert False
-    #
-    #     elif hover == "2":
-    #         sleep(1)
-    #         allure.attach("", "清空HY登陆页密码文本框")
-    #         self.login_page.clear_password()
-    #         allure.attach("", "输入HY登陆页密码文本框")
-    #         self.login_page.input_password(password)
-    #         allure.attach("", "点击HY登陆页立即登录按钮")
-    #         self.login_page.click_login_btn()
-    #         sleep(1)
-    #         allure.attach("", "清空HY登陆页密码文本框")
-    #         self.login_page.clear_password()
-    #         allure.attach("", "输入HY登陆页密码文本框")
-    #         self.login_page.input_password(password)
-    #         allure.attach("", "点击HY登陆页立即登录按钮")
-    #         self.login_page.click_login_btn()
-    #         try:
-    #             allure.attach("", "校验页面元素是否包含：" + exist)
-    #             assert self.base_webaction.is_toast_exist(exist)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             # self.base_webaction.screenshot(screen)
-    #             self.driver.quit()
-    #
-    #         except Exception as msg:
-    #             self.base_webaction.screenshot(screen)
-    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #             print('测试Fail,异常原因:', msg)
-    #             self.driver.quit()
-    #             assert False
-    #
-    #     # try:
-    #     #     allure.attach("", "校验页面元素是否包含：" + exist)
-    #     #     assert self.base_webaction.is_toast_exist(exist)
-    #     #     # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #     #     # self.base_webaction.screenshot(screen)
-    #     #     self.driver.quit()
-    #     #
-    #     # except Exception as msg:
-    #     #     self.base_webaction.screenshot(screen)
-    #     #     # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-    #     #     print('测试Fail,异常原因:', msg)
-    #     #     self.driver.quit()
-    #     #     assert False
-    #
+    # @pytest.mark.run(order=1)
+    # @pytest.mark.skipif(True, reason="done")
+    @allure.step(title="HY登录模块校验")
+    @pytest.mark.parametrize("args", data_with_key("test_login"))
+    def test_Hy_Login(self, args):
+        title = args["title"]
+        screen = args["screen"]
+        hover = args["hover"]
+        username = args["username"]
+        password = args["password"]
+        exist = args["exist"]
+
+        allure.attach("", "标题：" + title)
+        allure.attach("", "用例编号：_" + screen)
+        allure.attach("", "点击登录按钮")
+        self.login_page.click_sign()
+        allure.attach("", "输入：" + username)
+        self.login_page.input_username(username)
+        allure.attach("", "输入" + password)
+        self.login_page.input_password(password)
+        allure.attach("", "点击HY登陆页立即登录按钮")
+        self.login_page.click_login_btn()
+
+        if hover == "0":
+            pass
+            try:
+                allure.attach("", "校验页面元素是否包含：" + exist)
+                assert self.base_webaction.is_toast_exist(exist)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                # self.base_webaction.screenshot(screen)
+                self.driver.quit()
+
+            except Exception as msg:
+                self.base_webaction.screenshot(screen)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                print('测试Fail,异常原因:', msg)
+                self.driver.quit()
+                assert False
+
+        elif hover == "1":
+            self.login_page.move_to_element(self.login_page.after_login)
+            self.login_page.click_td1()
+            try:
+                allure.attach("", "校验页面元素是否包含：" + exist)
+                assert self.base_webaction.is_toast_exist(exist)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                # self.base_webaction.screenshot(screen)
+                self.driver.quit()
+
+            except Exception as msg:
+                self.base_webaction.screenshot(screen)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                print('测试Fail,异常原因:', msg)
+                self.driver.quit()
+                assert False
+
+        elif hover == "2":
+            sleep(1)
+            allure.attach("", "清空HY登陆页密码文本框")
+            self.login_page.clear_password()
+            allure.attach("", "输入HY登陆页密码文本框")
+            self.login_page.input_password(password)
+            allure.attach("", "点击HY登陆页立即登录按钮")
+            self.login_page.click_login_btn()
+            sleep(1)
+            allure.attach("", "清空HY登陆页密码文本框")
+            self.login_page.clear_password()
+            allure.attach("", "输入HY登陆页密码文本框")
+            self.login_page.input_password(password)
+            allure.attach("", "点击HY登陆页立即登录按钮")
+            self.login_page.click_login_btn()
+            try:
+                allure.attach("", "校验页面元素是否包含：" + exist)
+                assert self.base_webaction.is_toast_exist(exist)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                # self.base_webaction.screenshot(screen)
+                self.driver.quit()
+
+            except Exception as msg:
+                self.base_webaction.screenshot(screen)
+                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+                print('测试Fail,异常原因:', msg)
+                self.driver.quit()
+                assert False
+
     # # @pytest.mark.run(order=2)
     # # @pytest.mark.skipif(True, reason="done")
     # @allure.step(title="标题_登录页面跳转")
@@ -159,178 +145,178 @@ class TestLogin:
     #         self.driver.quit()
     #         assert False
 
-    # @pytest.mark.run(order=3)
-    # @pytest.mark.skipif(True, reason="done")
-    @allure.step(title="标题_控制台页面跳转")
-    @pytest.mark.parametrize("args", data_with_key("test_HyConsole_Jump"))
-    def test_HyConsole_Jump(self, args):
-        title = args["title"]
-        screen = args["screen"]
-        hover = args["hover"]
-        label = args["label"]
-        username = args["username"]
-        password = args["password"]
-        description = args["description"]
-        element = args["element"]
-        description2 = args["description2"]
-        element2 = args["element2"]
-        exist = args["exist"]
-
-        allure.attach("", "标题_" + title)
-        allure.attach("", "用例编号：_" + screen)
-        allure.attach("", "点击登录按钮")
-        self.login_page.click_sign()
-        allure.attach("", "输入HY登陆页账号文本框")
-        self.login_page.input_username(username)
-        allure.attach("", "输入HY登陆页密码文本框")
-        self.login_page.input_password(password)
-        allure.attach("", "点击HY登陆页立即登录按钮")
-        self.login_page.click_login_btn()
-        allure.attach("", "点击账号连接")
-        self.login_page.click_after_login()
-
-        # 页面直接操作点击
-        if hover == "0":
-            allure.attach("", "点击" + description)
-            self.login_page.click_css_xapth(label, element)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        # 新开句柄
-        elif hover == "1":
-            current = self.base_webaction.current_handle()
-            allure.attach("", "点击" + description)
-            sleep(1)
-            self.login_page.click_css_xapth(label, element)
-            self.base_webaction.handles_handle(current)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        # 悬停-账号
-        elif hover == "2":
-            sleep(1)
-            self.login_page.move_to_element(self.login_page.kzt_login)
-            allure.attach("", "点击" + description)
-            sleep(1)
-            self.login_page.click_css_xapth(label, element)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        # 悬停-费用
-        elif hover == "3":
-            sleep(1)
-            self.login_page.move_to_element(self.login_page.kzt_cost)
-            allure.attach("", "点击" + description)
-            sleep(1)
-            self.login_page.click_css_xapth(label, element)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        # 悬停-工单
-        elif hover == "4":
-            sleep(1)
-            self.login_page.move_to_element(self.login_page.kzt_work_order)
-            allure.attach("", "点击" + description)
-            sleep(1)
-            self.login_page.click_css_xapth(label, element)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-        # 页面直接操作点击2次
-        elif hover == "5":
-            allure.attach("", "点击" + description)
-            self.login_page.click_css_xapth(label, element)
-            allure.attach("", "点击" + description2)
-            sleep(1)
-            self.login_page.click_css_xapth(label, element2)
-            try:
-                assert self.base_webaction.is_toast_exist(exist)
-                # self.base_webaction.screenshot(screen)
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        # 未实名制用户判断是否显示页面元素
-        elif hover == "6":
-            sleep(2)
-            pass
-            try:
-                ret = self.base_webaction.is_displayed(self.login_page.bubble)
-                print(ret)
-                assert ret == True
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
-
-        elif hover == "7":
-            sleep(2)
-            pass
-            try:
-                ret = self.base_webaction.is_displayed(self.login_page.bubble)
-                print(ret)
-                assert ret == False
-                self.driver.quit()
-
-            except Exception as msg:
-                self.base_webaction.screenshot(screen)
-                # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
-                print('测试Fail,异常原因:', msg)
-                self.driver.quit()
-                assert False
+    # # @pytest.mark.run(order=3)
+    # # @pytest.mark.skipif(True, reason="done")
+    # @allure.step(title="标题_控制台页面跳转")
+    # @pytest.mark.parametrize("args", data_with_key("test_HyConsole_Jump"))
+    # def test_HyConsole_Jump(self, args):
+    #     title = args["title"]
+    #     screen = args["screen"]
+    #     hover = args["hover"]
+    #     label = args["label"]
+    #     username = args["username"]
+    #     password = args["password"]
+    #     description = args["description"]
+    #     element = args["element"]
+    #     description2 = args["description2"]
+    #     element2 = args["element2"]
+    #     exist = args["exist"]
+    #
+    #     allure.attach("", "标题_" + title)
+    #     allure.attach("", "用例编号：_" + screen)
+    #     allure.attach("", "点击登录按钮")
+    #     self.login_page.click_sign()
+    #     allure.attach("", "输入HY登陆页账号文本框")
+    #     self.login_page.input_username(username)
+    #     allure.attach("", "输入HY登陆页密码文本框")
+    #     self.login_page.input_password(password)
+    #     allure.attach("", "点击HY登陆页立即登录按钮")
+    #     self.login_page.click_login_btn()
+    #     allure.attach("", "点击账号连接")
+    #     self.login_page.click_after_login()
+    #
+    #     # 页面直接操作点击
+    #     if hover == "0":
+    #         allure.attach("", "点击" + description)
+    #         self.login_page.click_css_xapth(label, element)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     # 新开句柄
+    #     elif hover == "1":
+    #         current = self.base_webaction.current_handle()
+    #         allure.attach("", "点击" + description)
+    #         sleep(1)
+    #         self.login_page.click_css_xapth(label, element)
+    #         self.base_webaction.handles_handle(current)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     # 悬停-账号
+    #     elif hover == "2":
+    #         sleep(1)
+    #         self.login_page.move_to_element(self.login_page.kzt_login)
+    #         allure.attach("", "点击" + description)
+    #         sleep(1)
+    #         self.login_page.click_css_xapth(label, element)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     # 悬停-费用
+    #     elif hover == "3":
+    #         sleep(1)
+    #         self.login_page.move_to_element(self.login_page.kzt_cost)
+    #         allure.attach("", "点击" + description)
+    #         sleep(1)
+    #         self.login_page.click_css_xapth(label, element)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     # 悬停-工单
+    #     elif hover == "4":
+    #         sleep(1)
+    #         self.login_page.move_to_element(self.login_page.kzt_work_order)
+    #         allure.attach("", "点击" + description)
+    #         sleep(1)
+    #         self.login_page.click_css_xapth(label, element)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #     # 页面直接操作点击2次
+    #     elif hover == "5":
+    #         allure.attach("", "点击" + description)
+    #         self.login_page.click_css_xapth(label, element)
+    #         allure.attach("", "点击" + description2)
+    #         sleep(1)
+    #         self.login_page.click_css_xapth(label, element2)
+    #         try:
+    #             assert self.base_webaction.is_toast_exist(exist)
+    #             # self.base_webaction.screenshot(screen)
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     # 未实名制用户判断是否显示页面元素
+    #     elif hover == "6":
+    #         sleep(2)
+    #         pass
+    #         try:
+    #             ret = self.base_webaction.is_displayed(self.login_page.bubble)
+    #             print(ret)
+    #             assert ret == True
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     elif hover == "7":
+    #         sleep(2)
+    #         pass
+    #         try:
+    #             ret = self.base_webaction.is_displayed(self.login_page.bubble)
+    #             print(ret)
+    #             assert ret == False
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
 
     # # @pytest.mark.run(order=4)
     # # @pytest.mark.skipif(True, reason="done")
@@ -753,4 +739,3 @@ class TestLogin:
     #             print('测试Fail,异常原因:', msg)
     #             self.driver.quit()
     #             assert False
-
