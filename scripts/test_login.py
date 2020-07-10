@@ -19,7 +19,7 @@ def data_with_key(key):
 class TestLogin:
 
     def setup(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(r'D:\python3.7.6\chromedriver.exe')
         url = "http://xinnet.com/"
         self.driver.get(url)
         self.driver.maximize_window()
