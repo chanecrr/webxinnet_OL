@@ -6,13 +6,13 @@ test_login:
     username: "hy5270270@xinnet.com"
     password: "tianmo231"
     exist: "hy5270270@xinnet.com"
-#  test_longin_002:
-#    title: "HY账号-成功退出"
-#    screen: "test_login_002"
-#    hover:  "1"
-#    username: "chenran@xinnet.com"
-#    password: "tianmo231"
-#    exist: "登录"
+  test_longin_002:
+    title: "HY账号-成功退出"
+    screen: "test_login_002"
+    hover:  "1"
+    username: "chenran@xinnet.com"
+    password: "tianmo231"
+    exist: "登录"
 #  test_longin_003:
 #    title: "HY账号【邮箱】-为空校验提示正确"
 #    screen: "test_login_003"
