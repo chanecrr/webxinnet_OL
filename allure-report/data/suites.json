@@ -1,0 +1,29 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "scripts",
+    "children" : [ {
+      "name" : "test_login",
+      "children" : [ {
+        "name" : "TestLogin",
+        "children" : [ {
+          "name" : "test_Hy_Login[args0]",
+          "uid" : "fd5fb6b62ad47586",
+          "parentUid" : "51cb19ae88f6b4d1ba88d873b7809ac5",
+          "status" : "passed",
+          "time" : {
+            "start" : 1594975979339,
+            "stop" : 1594975984003,
+            "duration" : 4664
+          },
+          "flaky" : false,
+          "parameters" : [ "{'title': 'HY账号【邮箱】-成功登录', 'screen': 'test_login_001', 'hover': '0', 'username': 'hy5270270@xinnet.com', 'password': 'tianmo231', 'exist': 'hy5270270@xinnet.com'}" ]
+        } ],
+        "uid" : "51cb19ae88f6b4d1ba88d873b7809ac5"
+      } ],
+      "uid" : "5308816e98be8877fda327cc882cfe13"
+    } ],
+    "uid" : "af586ea5ffb1b57fad0f98a55a6d147c"
+  } ]
+}

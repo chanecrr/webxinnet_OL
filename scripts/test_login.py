@@ -19,7 +19,7 @@ def data_with_key(key):
 class TestLogin:
 
     def setup(self):
-        self.driver = webdriver.Chrome(r'D:\python3.7.6\chromedriver.exe')
+        self.driver = webdriver.Chrome()
         url = "http://xinnet.com/"
         self.driver.get(url)
         self.driver.maximize_window()
@@ -112,6 +112,20 @@ class TestLogin:
                 print('测试Fail,异常原因:', msg)
                 self.driver.quit()
                 assert False
+
+        # try:
+        #     allure.attach("", "校验页面元素是否包含：" + exist)
+        #     assert self.base_webaction.is_toast_exist(exist)
+        #     # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+        #     # self.base_webaction.screenshot(screen)
+        #     self.driver.quit()
+        #
+        # except Exception as msg:
+        #     self.base_webaction.screenshot(screen)
+        #     # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+        #     print('测试Fail,异常原因:', msg)
+        #     self.driver.quit()
+        #     assert False
 
     # # @pytest.mark.run(order=2)
     # # @pytest.mark.skipif(True, reason="done")
@@ -266,6 +280,7 @@ class TestLogin:
     #             print('测试Fail,异常原因:', msg)
     #             self.driver.quit()
     #             assert False
+    #
     #     # 页面直接操作点击2次
     #     elif hover == "5":
     #         allure.attach("", "点击" + description)
@@ -309,6 +324,22 @@ class TestLogin:
     #             ret = self.base_webaction.is_displayed(self.login_page.bubble)
     #             print(ret)
     #             assert ret == False
+    #             self.driver.quit()
+    #
+    #         except Exception as msg:
+    #             self.base_webaction.screenshot(screen)
+    #             # allure.attach('描述', open('./screen/' + screen + '.png', 'rb').read(), allure.attachment_type.PNG)
+    #             print('测试Fail,异常原因:', msg)
+    #             self.driver.quit()
+    #             assert False
+    #
+    #     elif hover == "8":
+    #         self.login_page.click_css_xapth(label, element)
+    #         sleep(1.5)
+    #         ret = self.base_webaction.is_displayed(self.login_page.cost_decertify)
+    #         print(ret)
+    #         try:
+    #             assert ret == True
     #             self.driver.quit()
     #
     #         except Exception as msg:
@@ -617,7 +648,7 @@ class TestLogin:
     #             print('测试Fail,异常原因:', msg)
     #             self.driver.quit()
     #             assert False
-
+    #
     # # @pytest.mark.run(order=7)
     # # @pytest.mark.skipif(True, reason="done")
     # @allure.step(title="安全设置页跳转逻辑")

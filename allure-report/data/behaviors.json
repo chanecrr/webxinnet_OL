@@ -1,0 +1,17 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "test_Hy_Login[args0]",
+    "uid" : "fd5fb6b62ad47586",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1594975979339,
+      "stop" : 1594975984003,
+      "duration" : 4664
+    },
+    "flaky" : false,
+    "parameters" : [ "{'title': 'HY账号【邮箱】-成功登录', 'screen': 'test_login_001', 'hover': '0', 'username': 'hy5270270@xinnet.com', 'password': 'tianmo231', 'exist': 'hy5270270@xinnet.com'}" ]
+  } ]
+}

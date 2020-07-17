@@ -257,6 +257,10 @@ class LoginPage(BaseAction):
     # 安全设置页【验证方式 】【返回】按钮
     safety_other_return = ".a1-left.a-grey.fs12"
 
+    '''费用中心'''
+    # 自助提现页【现在去认证】按钮
+    cost_decertify = By.XPATH, ".//*[@id='realNameWin']/div/div[2]/div/a"
+
     def __init__(self, driver):
         BaseAction.__init__(self, driver)
         # 点击显示 (init 里面可以去写已经确定的这个模块所有的前置功能)

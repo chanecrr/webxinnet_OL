@@ -1,0 +1,11 @@
+[ {
+  "uid" : "fd5fb6b62ad47586",
+  "name" : "test_Hy_Login[args0]",
+  "time" : {
+    "start" : 1594975979339,
+    "stop" : 1594975984003,
+    "duration" : 4664
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
