@@ -2,6 +2,7 @@
 import os
 import sys
 
+import allure
 from selenium.webdriver import ActionChains
 
 sys.path.append(os.getcwd())
@@ -89,6 +90,15 @@ class BaseAction:
     # 截图
     def screenshot(self, file_name):
         self.driver.get_screenshot_as_file("./screen/" + file_name + ".png")
+
+    # 截图上传至allure报告中
+    def allure_attachment_type(self, screen, text):
+        """screen screen文件夹下的图片名称
+            text文案：问题图片（正确图片）"""
+        with open('./screen/' + screen + '.png', 'rb') as f:
+            context = f.read()
+            allure.attach(context, text, attachment_type=allure.attachment_type.PNG)
+            # allure.attach("附件txt文字（内容）", "标题：响应报文", allure.attachment_type.TEXT)
 
     # 鼠标悬停
     def move_to_element(self, ele):

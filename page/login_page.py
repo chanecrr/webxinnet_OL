@@ -340,3 +340,12 @@ class LoginPage(BaseAction):
     # 点击控制台页【账户资料】按钮
     def click_kzt_data(self):
         self.click_element(self.kzt_data)
+
+    # 实名认证页面，跳过引导
+    def turn_off_boot(self):
+        sleep(2)
+        result = self.is_displayed(self.smrz_jump_over)
+        if result == True:
+            self.click_element(self.smrz_jump_over)
+        else:
+            pass
