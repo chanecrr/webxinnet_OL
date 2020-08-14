@@ -110,13 +110,16 @@ class BaseAction:
 
     # 导入excel表格
     def write_excel(self, list, sheet, save_path):
-        """list循环列表
-            sheet、excel页签
-            save_path保存路径
-        """
+        filter = ['--', '入门型', '1核1G', '1核2G', 'mysql5.7双机']
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
         worksheet = workbook.add_sheet(sheet)
+        worksheet.col(0).width = 9200
+        worksheet.col(1).width = 4500
+        worksheet.col(2).width = 2000
+        worksheet.col(3).width = 2000
+        worksheet.col(4).width = 2800
+        worksheet.col(5).width = 3000
         # i = 0
         # for x in new:
         #     if i == 0:
@@ -128,9 +131,12 @@ class BaseAction:
         i = 0
         m = 1
         for x in list:
-            worksheet.write(m, i, label=x)
-            i += 1
-            if len(x) == 10 and x.count("2020") > 0:
-                m += 1
-                i = 0
+            if x not in filter:
+                worksheet.write(m, i, label=x)
+                i += 1
+                # 判断换行
+                if x.count("2020"):
+                    # if len(x) == 10 and x.count("2020") > 0:
+                    m += 1
+                    i = 0
         workbook.save(save_path)
