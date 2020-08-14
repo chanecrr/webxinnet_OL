@@ -1,4 +1,5 @@
 # coding:utf-8
+import time, datetime
 import os
 import sys
 
@@ -110,6 +111,10 @@ class BaseAction:
 
     # 导入excel表格
     def write_excel(self, list, sheet, save_path):
+        """list 循环列表
+            sheet 页签
+            save_path 保存路径（'D:\工作\新网数码\退费申请%s.xls'）
+        """
         filter = ['--', '入门型', '1核1G', '1核2G', 'mysql5.7双机']
         workbook = xlwt.Workbook(encoding='utf-8')
         # 创建一个worksheet
@@ -139,4 +144,5 @@ class BaseAction:
                     # if len(x) == 10 and x.count("2020") > 0:
                     m += 1
                     i = 0
-        workbook.save(save_path)
+        t = datetime.date.today()
+        workbook.save(save_path % t)
