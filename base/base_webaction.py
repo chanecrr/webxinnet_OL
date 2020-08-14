@@ -2,7 +2,10 @@
 import os
 import sys
 
+from builtins import list
+
 import allure
+import xlwt
 from selenium.webdriver import ActionChains
 
 sys.path.append(os.getcwd())
@@ -104,3 +107,30 @@ class BaseAction:
     def move_to_element(self, ele):
         ret = self.wait_element(ele)
         ActionChains(self.driver).move_to_element(ret).perform()
+
+    # 导入excel表格
+    def write_excel(self, list, sheet, save_path):
+        """list循环列表
+            sheet、excel页签
+            save_path保存路径
+        """
+        workbook = xlwt.Workbook(encoding='utf-8')
+        # 创建一个worksheet
+        worksheet = workbook.add_sheet(sheet)
+        # i = 0
+        # for x in new:
+        #     if i == 0:
+        #         m = 1
+        #     m = i // 7 + 1
+        #     f = i % 7
+        #     worksheet.write(m, f, label=x)
+        #     i += 1
+        i = 0
+        m = 1
+        for x in list:
+            worksheet.write(m, i, label=x)
+            i += 1
+            if len(x) == 10 and x.count("2020") > 0:
+                m += 1
+                i = 0
+        workbook.save(save_path)
