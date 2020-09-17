@@ -178,6 +178,7 @@ class TestLogin:
         self.login_page.click_login_btn()
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
+        sleep(2)
 
         # 页面直接操作点击
         if hover == "0":
@@ -384,7 +385,7 @@ class TestLogin:
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
         allure.attach("", "点击账户资料按钮")
-        sleep(1)
+        sleep(2)
         self.base_webaction.move_to_element(self.login_page.kzt_login)
         sleep(1)
         self.login_page.click_kzt_data()
@@ -477,7 +478,7 @@ class TestLogin:
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
         allure.attach("", "点击账户资料按钮")
-        sleep(1)
+        sleep(2)
         self.base_webaction.move_to_element(self.login_page.kzt_login)
         sleep(1)
         self.login_page.click_kzt_data()
@@ -556,6 +557,7 @@ class TestLogin:
         self.login_page.click_login_btn()
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
+        sleep(2)
         allure.attach("", "点击实名认证按钮")
         sleep(1)
         self.base_webaction.move_to_element(self.login_page.kzt_login)
@@ -675,6 +677,7 @@ class TestLogin:
         self.login_page.click_login_btn()
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
+        sleep(2)
         allure.attach("", "点击账户资料按钮")
         sleep(1)
         self.base_webaction.move_to_element(self.login_page.kzt_login)
