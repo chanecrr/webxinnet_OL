@@ -546,7 +546,7 @@ class TestLogin:
 
         print(screen)
         allure.attach("", "标题：" + title)
-        allure.attach("", "用例编号：_" + screen)
+        allure.attach("", "用例编号：" + screen)
         allure.attach("", "点击登录按钮")
         self.login_page.click_sign()
         allure.attach("", "输入HY登陆页账号文本框")
@@ -677,7 +677,7 @@ class TestLogin:
         self.login_page.click_login_btn()
         allure.attach("", "点击账号连接")
         self.login_page.click_after_login()
-        sleep(2)
+        sleep(3)
         allure.attach("", "点击账户资料按钮")
         sleep(1)
         self.base_webaction.move_to_element(self.login_page.kzt_login)
